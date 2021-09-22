@@ -10,6 +10,7 @@ namespace SampleContact.Data.Repositories
     /// <inheritdoc />
     public sealed class ContactRepository : IContactRepository
     {
+        // TODO - Pull out all the LiteDB details and consolidate into a single client in the Clients folder
         public async Task<IEnumerable<Contact>> GetAllContacts()
         {
             using (var db = new LiteDatabase(@"SampleContacts.db"))
