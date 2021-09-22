@@ -40,7 +40,8 @@ namespace SampleContact.Data.Services.Contracts
         /// Removes a <see cref="Contact"/> single contact
         /// </summary>
         /// <param name="contactId">The id of the contact to remove</param>
-        Task DeleteContact(int contactId);
+        /// <returns>True if deleted</returns>
+        Task<bool> DeleteContact(int contactId);
 
         /// <summary>
         /// Returns a call list based on existing contacts

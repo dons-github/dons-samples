@@ -76,16 +76,16 @@ namespace SampleContact.Controllers
         [HttpDelete, Route("{contactId}")]
         public async Task<IActionResult> DeleteContact(int contactId)
         {
-            try
+            var deleted = await _contactService.DeleteContact(contactId);
+            
+            if (deleted)
             {
-                await _contactService.DeleteContact(contactId);
+                return Ok();
             }
-            catch (System.Web.Http.HttpResponseException exception) when (exception.Response.StatusCode == HttpStatusCode.NotFound)
-            {
+            else
+            { 
                 return NotFound();
             }
-
-            return Ok();
         }
 
         /// <summary>

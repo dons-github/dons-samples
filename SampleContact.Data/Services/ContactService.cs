@@ -58,9 +58,9 @@ namespace SampleContact.Data
         }
 
         // <inheritdoc />
-        public async Task DeleteContact(int contactId)
+        public async Task<bool> DeleteContact(int contactId)
         {
-            await _contactRepository.DeleteContact(contactId);
+            return await _contactRepository.DeleteContact(contactId);
         }
 
         // <inheritdoc />

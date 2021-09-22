@@ -4,7 +4,6 @@ using SampleContact.Data.Repositories.Contracts;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Http;
 
 namespace SampleContact.Data.Repositories
 {
@@ -55,19 +54,12 @@ namespace SampleContact.Data.Repositories
         }
 
         /// <inheritdoc />
-        public async Task DeleteContact(int contactId)
+        public async Task<bool> DeleteContact(int contactId)
         {
-            bool results = false;
-
             using (var db = new LiteDatabase(@"SampleContacts.db"))
             {
                 var contacts = db.GetCollection<Contact>("contacts");
-                results = await Task.Run(() => contacts.Delete(contactId));
-            }
-
-            if (!results)
-            {
-                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+                return await Task.Run(() => contacts.Delete(contactId));
             }
         }
 

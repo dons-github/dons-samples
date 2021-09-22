@@ -50,3 +50,16 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/SampleContact.Api/obj/Debug/netcoreapp3.1
+/SampleContact.Data/obj/Debug/netcoreapp3.1
+/SampleContact.Tests/obj/Debug/netcoreapp3.1
+/SampleContact.Api/obj/Release/netcoreapp3.1
+/SampleContact.Data/obj/Release/netcoreapp3.1
+/SampleContact.Tests/obj/Release/netcoreapp3.1
+/.vs
+/SampleContact.Api/bin/Debug/netcoreapp3.1
+/SampleContact.Api/obj
+/SampleContact.Data/bin/Debug/netcoreapp3.1
+/SampleContact.Data/obj
+/SampleContact.Tests/bin/Debug/netcoreapp3.1
+/SampleContact.Tests/obj
