@@ -84,6 +84,5 @@ namespace SampleContact.Data.Repositories
                     .ToList();
             }
         }
-
     }
 }

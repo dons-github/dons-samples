@@ -24,16 +24,11 @@ namespace SampleContact
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-                //.AddJsonOptions(j => j.JsonSerializerOptions.Converters.Add(new;
-
-            //services.AddTransient<IValidator<Contact>, ContactValidator>();
 
             RegisterRepositories(services);
             RegisterServices(services);
-            services.AddSwaggerGen();
-            
-            //services.AddMvcCore().addflu
 
+            services.AddSwaggerGen();
             services.AddFluentValidation();
         }
 
@@ -68,7 +63,6 @@ namespace SampleContact
                 endpoints.MapControllers();
             });
         }
-
 
         private static void RegisterServices(IServiceCollection services)
         {
